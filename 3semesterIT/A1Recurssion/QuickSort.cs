@@ -8,17 +8,20 @@ namespace ThirdSemesterIT.A1Recurssion
 {
     public class QuickSort
     {
-        public List<int> quickSort(List<int> nums) {
+        public List<int> quickSort(List<int> nums)
+        {
             if (nums.Count <= 1)
             {
                 return nums;
             }
-            else {
+            else
+            {
                 int pivot = nums[0];
                 List<int> smaller = new List<int>();
                 List<int> bigger = new List<int>();
-                List<int> sameNumber = new() {pivot};
-                for (int i = 1; i < nums.Count; i++){
+                List<int> sameNumber = new() { pivot };
+                for (int i = 1; i < nums.Count; i++)
+                {
                     if (nums[i] < pivot)
                     {
                         smaller.Add(nums[i]);
@@ -27,7 +30,8 @@ namespace ThirdSemesterIT.A1Recurssion
                     {
                         bigger.Add(nums[i]);
                     }
-                    else { 
+                    else
+                    {
                         sameNumber.Add(nums[i]);
                     }
                 }

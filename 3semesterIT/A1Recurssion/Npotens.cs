@@ -6,15 +6,13 @@ using System.Threading.Tasks;
 
 namespace ThirdSemesterIT.A1Recurssion
 {
-    public class Fibonacci
+    public class Npotens
     {
-        public int fib(int n)
+        public int NPotens(int potens, int n)
         {
-            if (n <= 1)
-            {
+            if (potens == 0)
                 return 1;
-            }
-            return fib(n - 1) + fib(n - 2);
+            return NPotens(potens - 1, n) * n;
         }
     }
 }

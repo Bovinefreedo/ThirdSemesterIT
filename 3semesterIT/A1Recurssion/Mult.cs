@@ -6,15 +6,13 @@ using System.Threading.Tasks;
 
 namespace ThirdSemesterIT.A1Recurssion
 {
-    public class Fibonacci
+    public class Mult
     {
-        public int fib(int n)
+        public int mult(int n, int m)
         {
-            if (n <= 1)
-            {
-                return 1;
-            }
-            return fib(n - 1) + fib(n - 2);
+            if (n == 1) return m;
+            if (n == 0) return 0;
+            return mult(n - 1, m) + m;
         }
     }
 }

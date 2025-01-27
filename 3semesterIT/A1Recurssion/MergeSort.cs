@@ -8,12 +8,14 @@ namespace ThirdSemesterIT.A1Recurssion
 {
     public class MergeSort
     {
-        public List<int> mergeSort(List<int> nums) {
+        public List<int> mergeSort(List<int> nums)
+        {
             if (nums.Count == 1)
             {
                 return nums;
             }
-            else {
+            else
+            {
                 List<int> listOne = mergeSort(nums.GetRange(0, nums.Count / 2));
                 List<int> listTwo = mergeSort(nums.GetRange(nums.Count / 2, nums.Count - nums.Count / 2));
 
@@ -21,9 +23,11 @@ namespace ThirdSemesterIT.A1Recurssion
             }
         }
 
-        public List<int> merge(List<int> listOne, List<int> listTwo) {
+        public List<int> merge(List<int> listOne, List<int> listTwo)
+        {
             List<int> result = new();
-            while (listOne.Count > 0 || listTwo.Count > 0) {
+            while (listOne.Count > 0 || listTwo.Count > 0)
+            {
                 if (listOne.Count > 0 && listTwo.Count > 0)
                 {
                     if (listOne[0] < listTwo[0])
@@ -42,7 +46,8 @@ namespace ThirdSemesterIT.A1Recurssion
                     result = result.Concat(listOne).ToList();
                     break;
                 }
-                else {
+                else
+                {
                     result = result.Concat(listTwo).ToList();
                     break;
                 }
