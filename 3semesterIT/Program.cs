@@ -1,9 +1,8 @@
 ﻿using ThirdSemesterIT.B1Leetcode;
 using ThirdSemesterIT.A1Recurssion;
 
-int[] greedyKids = new int[4] { 10, 9, 8, 7 };
-int[] cookieSize = new int[4] { 5, 6, 7, 8 };
+Q475Heaters heaters = new Q475Heaters();
+int[] houses = new int[4] { 1, 4, 8, 10 };
+int[] heater = new int[3] { 2, 4, 7 };
 
-Q455GreedyCookieDistribution prob = new();
-
-Console.WriteLine($"number of satisfied kids: {prob.FindContentChildren(greedyKids, cookieSize)}");
+Console.WriteLine(heaters.FindRadius(houses, heater));
