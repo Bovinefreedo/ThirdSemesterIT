@@ -8,11 +8,11 @@ namespace ThirdSemesterIT.A1Recurssion
 {
     public class Npotens
     {
-        public int NPotens(int potens, int n)
+        public int NPotens(int p, int n)
         {
-            if (potens == 0)
+            if (p == 0)
                 return 1;
-            return NPotens(potens - 1, n) * n;
+            return NPotens(p - 1, n) * n;
         }
     }
 }

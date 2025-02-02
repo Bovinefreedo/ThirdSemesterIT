@@ -14,6 +14,7 @@ namespace ThirdSemesterIT.A1Recurssion
             {
                 return 1;
             }
+            Console.WriteLine(n);
             return fib(n - 1) + fib(n - 2);
         }
     }

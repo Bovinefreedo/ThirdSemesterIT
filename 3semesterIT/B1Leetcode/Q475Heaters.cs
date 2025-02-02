@@ -15,22 +15,26 @@ namespace ThirdSemesterIT.B1Leetcode
             Array.Sort(heaters);
             int j = 0;
             int i = 0;
-
-            while( i < houses.Length) { 
-                int distJ = Math.Abs(houses[i]-heaters[j]);
-                int distNext = Math.Abs(houses[i] - heaters[j+1]);
-                if (distJ <= distNext) {
-                    if(distJ>result)
-                        result = distJ;
-                    i++;    
-                }
-                else
+            if (heaters.Length > 1)
+            {
+                while (i < houses.Length)
                 {
-                    j++;
-                    if (j == heaters.Length-1)
-                        break;
+                    int distJ = Math.Abs(houses[i] - heaters[j]);
+                    int distNext = Math.Abs(houses[i] - heaters[j + 1]);
+                    if (distJ < distNext)
+                    {
+                        if (distJ > result)
+                            result = distJ;
+                        i++;
+                    }
+                    else
+                    {
+                        j++;
+                        if (j == heaters.Length - 1)
+                            break;
+                    }
                 }
-            } 
+            }
             while (i < houses.Length)
             {
                 int distJ = Math.Abs(houses[i] - heaters[j]);
@@ -39,8 +43,7 @@ namespace ThirdSemesterIT.B1Leetcode
                 i++;
 
             }
-
-                return result;
+            return result;
         }
     }
 }
