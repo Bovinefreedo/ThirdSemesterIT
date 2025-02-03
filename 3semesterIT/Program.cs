@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using ThirdSemesterIT.A1Recurssion;
 using ThirdSemesterIT.A2FunctionalProgramming;
 using ThirdSemesterIT.B1Leetcode;
 
@@ -17,9 +18,9 @@ using ThirdSemesterIT.B1Leetcode;
 
 //Console.WriteLine(heaters.FindRadius(house, heater));
 
-Q5LongestPalindromicSubstring subPal = new();
+//Q5LongestPalindromicSubstring subPal = new();
 
-Console.WriteLine(subPal.LongestPalindrome("gtattarrattatg"));
+//Console.WriteLine(subPal.LongestPalindrome("gtattarrattatg"));
 
 //int[] nums = new int[1000];
 
@@ -34,5 +35,7 @@ Console.WriteLine(subPal.LongestPalindrome("gtattarrattatg"));
 //    Console.WriteLine(i);
 //}
 
-for (int i = 0; i< 30; i++)
-    Console.WriteLine(NPotensFunctional.nPotens(2,i));
+//for (int i = 0; i< 30; i++)
+//    Console.WriteLine(NPotensFunctional.nPotens(2,i));
+
+Console.WriteLine(DiscScanner.numberOfFiles("c:/users/hotso/source/repos"));

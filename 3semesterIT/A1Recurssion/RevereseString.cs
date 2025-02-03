@@ -8,7 +8,7 @@ namespace ThirdSemesterIT.A1Recurssion
 {
     public class RevereseString
     {
-        public string reverse(string s)
+        public static string reverse(string s)
         {
             if (s.Length == 1)
                 return s;

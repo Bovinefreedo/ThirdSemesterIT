@@ -8,7 +8,7 @@ namespace ThirdSemesterIT.A1Recurssion
 {
     public class TriangleSquare
     {
-        public int numberOfSquaresInTriangle(int sideLength)
+        public static int numberOfSquaresInTriangle(int sideLength)
         {
             if (sideLength == 1)
             {

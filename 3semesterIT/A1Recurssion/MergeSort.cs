@@ -8,7 +8,7 @@ namespace ThirdSemesterIT.A1Recurssion
 {
     public class MergeSort
     {
-        public List<int> mergeSort(List<int> nums)
+        public static List<int> mergeSort(List<int> nums)
         {
             if (nums.Count == 1)
             {
@@ -23,7 +23,7 @@ namespace ThirdSemesterIT.A1Recurssion
             }
         }
 
-        public List<int> merge(List<int> listOne, List<int> listTwo)
+        public static List<int> merge(List<int> listOne, List<int> listTwo)
         {
             List<int> result = new();
             while (listOne.Count > 0 || listTwo.Count > 0)

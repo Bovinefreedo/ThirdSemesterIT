@@ -8,7 +8,7 @@ namespace ThirdSemesterIT.A1Recurssion
 {
     public class Npotens
     {
-        public int NPotens(int p, int n)
+        public static int NPotens(int p, int n)
         {
             if (p == 0)
                 return 1;

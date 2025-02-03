@@ -8,7 +8,7 @@ namespace ThirdSemesterIT.A1Recurssion
 {
     public class GreatestCommonDemoniator
     {
-        public int gcd(int a, int b)
+        public static int gcd(int a, int b)
         {
             if (b <= a && a % b == 0)
             {

@@ -8,7 +8,7 @@ namespace ThirdSemesterIT.A1Recurssion
 {
     public class Mult
     {
-        public int mult(int n, int m)
+        public static int mult(int n, int m)
         {
             if (n == 1) return m;
             if (n == 0) return 0;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ThirdSemesterIT.A1Recurssion
 {
-    public class QuickSort
+    public static class QuickSort
     {
         public List<int> quickSort(List<int> nums)
         {

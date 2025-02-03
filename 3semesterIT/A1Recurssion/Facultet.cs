@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ThirdSemesterIT.A1Recurssion
 {
-    public class Facultet
+    public static class Facultet
     {
         public int facReccursive(int n)
         {
