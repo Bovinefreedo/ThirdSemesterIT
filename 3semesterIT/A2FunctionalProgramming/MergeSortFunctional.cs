@@ -13,7 +13,6 @@ namespace ThirdSemesterIT.A2FunctionalProgramming
             array.Length == 1 ? array :
             merge(mergeSort(array.Where(x => x % 2 == 0).ToArray()), mergeSort(array.Where(x => x % 2 == 1).ToArray()));
 
-        public static Func<int[], int[], int[]> merge = (x, y) => new int[0];
-            
+        public static Func<int[], int[], int[]> merge = (x, y) => new int[0];            
     }
 }

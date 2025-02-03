@@ -10,7 +10,7 @@ namespace ThirdSemesterIT.A1Recurssion
     {
         public static string reverse(string s)
         {
-            if (s.Length == 1)
+            if (s.Length <= 1)
                 return s;
             return s.Substring(s.Length - 1, 1) + reverse(s.Remove(s.Length - 1));
         }

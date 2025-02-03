@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace ThirdSemesterIT.A1Recurssion
 {
-    public static class Facultet
+    public  class Facultet
     {
-        public int facReccursive(int n)
+        public static int facReccursive(int n)
         {
             if (n == 0) return 1;
             return facReccursive(n - 1) * n;
         }
 
-        public int facLoop(int n)
+        public static int facLoop(int n)
         {
             int result = 1;
             for (int i = 1; i <= n; i++)

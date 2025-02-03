@@ -38,4 +38,17 @@ using ThirdSemesterIT.B1Leetcode;
 //for (int i = 0; i< 30; i++)
 //    Console.WriteLine(NPotensFunctional.nPotens(2,i));
 
-Console.WriteLine(DiscScanner.numberOfFiles("c:/users/hotso/source/repos"));
+//Person[] people = Modul2.youngerThan(Modul2.people, 30);
+
+//string[] badwords = new string[] { "vasketøjet", "regnvejr", "email", "forsinket", "tidligt" };
+//string[] words = new string[] { "Jeg", "vil", "stå", "tideligt", "op", "og", "gøre", "noget", "ved", "vasketøjet", "jeg", "håber", "det", "ikke", "bliver", "regnvejr", "ellers", "sender", "jeg", "en", "email" };
+
+//string[] newWords = Modul2.badWordReplacer(words, badwords);
+
+//Console.Write(string.Join(" ", newWords));
+
+Person[] people = BubbleSort.sortPeopleByName(Modul2.people);
+
+foreach (Person person in people) { 
+    Console.WriteLine($"{person.Name}, Age: {person.Age}, PhoneNumber {person.Phone}");
+}

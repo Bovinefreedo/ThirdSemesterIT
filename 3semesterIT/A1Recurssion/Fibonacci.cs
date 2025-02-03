@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ThirdSemesterIT.A1Recurssion
 {
-    public static class Fibonacci
+    public  class Fibonacci
     {
-        public int fib(int n)
+        public static int fib(int n)
         {
             if (n <= 1)
             {

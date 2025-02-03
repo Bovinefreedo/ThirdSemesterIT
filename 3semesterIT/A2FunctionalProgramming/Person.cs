@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ThirdSemesterIT.A2FunctionalProgramming
 {
-    public class NPotensFunctional
+    public record Person
     {
-        public static Func<int, int, int> nPotens = (n, p) =>
-            p == 0 ? 1 :
-            n * nPotens(n, p - 1);    
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public string Phone { get; set; }
     }
 }

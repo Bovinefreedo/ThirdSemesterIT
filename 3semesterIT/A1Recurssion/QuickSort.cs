@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ThirdSemesterIT.A1Recurssion
 {
-    public static class QuickSort
+    public  class QuickSort
     {
-        public List<int> quickSort(List<int> nums)
+        public static List<int> quickSort(List<int> nums)
         {
             if (nums.Count <= 1)
             {
