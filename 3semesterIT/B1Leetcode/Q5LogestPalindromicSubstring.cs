@@ -8,7 +8,7 @@ namespace ThirdSemesterIT.B1Leetcode
 {
     public class Q5LongestPalindromicSubstring
     {
-        public string LongestPalindrome(string s)
+        public static string LongestPalindrome(string s)
         {
             string longestSoFar = string.Empty;
             for (int i = 0; i < s.Length; i++)

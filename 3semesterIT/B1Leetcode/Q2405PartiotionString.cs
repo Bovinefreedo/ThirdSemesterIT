@@ -8,7 +8,7 @@ namespace ThirdSemesterIT.B1Leetcode
 {
     public class Q2405PartiotionString
     {
-        public int PartitionString(string s)
+        public static int PartitionString(string s)
         {
             bool[] seen = new bool[26];
             int result = 1;

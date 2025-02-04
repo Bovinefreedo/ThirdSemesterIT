@@ -8,7 +8,7 @@ namespace ThirdSemesterIT.B1Leetcode
 {
     public class Q475Heaters
     {
-        public int FindRadius(int[] houses, int[] heaters)
+        public static int FindRadius(int[] houses, int[] heaters)
         {
             int result = 0;
             Array.Sort(houses);

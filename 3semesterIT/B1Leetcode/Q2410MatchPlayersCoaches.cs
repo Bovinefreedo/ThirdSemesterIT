@@ -8,7 +8,7 @@ namespace ThirdSemesterIT.B1Leetcode
 {
     public class Q2410MatchPlayersCoaches
     {
-        public int MatchPlayersAndTrainers(int[] players, int[] trainers)
+        public static int MatchPlayersAndTrainers(int[] players, int[] trainers)
         {
             //I know what I did here and it is not good!
             int playersMatched = 0;

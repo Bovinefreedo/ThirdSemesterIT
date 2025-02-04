@@ -8,7 +8,7 @@ namespace ThirdSemesterIT.B1Leetcode
 {
     public class Q455GreedyCookieDistribution
     {
-        public int FindContentChildren(int[] g, int[] s)
+        public static int FindContentChildren(int[] g, int[] s)
         {
             //I know what I did here and it is not good!
             int satisfiedChildren = 0;

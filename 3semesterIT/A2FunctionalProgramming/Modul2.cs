@@ -48,7 +48,7 @@ namespace ThirdSemesterIT.A2FunctionalProgramming
         public static Func<string, string[], string> badWordIdentifier = (word, badWord) =>
             badWord.Contains(word) ? "REDACTED" : word;
         
-        public static Func<string[], string[], string[]> badWordReplacer = (words, badwords) =>
-            words.Select(x => badWordIdentifier(x, badwords)).ToArray();
+        public static Func<string[], string[], string[]> badWordReplacer = (text, badwords) =>
+            text.Select(x => badWordIdentifier(x, badwords)).ToArray();
     }
 }

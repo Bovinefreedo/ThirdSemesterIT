@@ -55,6 +55,6 @@ namespace ThirdSemesterIT.A2FunctionalProgramming
             array.Length <= 1 ? array :
             SortQ!(array.Where(x => comp(x, array[0]) < 0).ToArray(), comp)
             .Concat(array.Where(x => comp(x, array[0]) == 0)).ToArray()
-            .Concat(SortQ(array.Where(x => comp(x, array[0]) > 0).ToArray(),comp)).ToArray();
+            .Concat(SortQ(array.Where(x => comp(x, array[0]) > 0).ToArray(), comp)).ToArray();
     }
 }
