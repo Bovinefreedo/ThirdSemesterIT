@@ -16,9 +16,9 @@ app.MapGet("/api/fruit/byindex/{num}", (int num) => new { Message = num < fruit.
 app.MapGet("/api/fruit/random", () => new {Message = fruit[rnd.Next(fruit.Count)] });
 app.MapPost("/api/fruit/add", (Fruit f) => {
     if (f == null)
-        {Results.BadRequest(f);}
+        {return Results.BadRequest(f);}
     fruit.Add(f.name);
-    return;
+    return Results.Ok();
 });
 
 app.Run();

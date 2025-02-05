@@ -15,9 +15,9 @@ using ThirdSemesterIT.B1Leetcode;
 
 //Console.Write(string.Join(" ", newWords));
 
-Person[] people = BubbleSort.Sort(Modul2.people, BubbleSort.SortOnName);
+//Person[] people = BubbleSort.Sort(Modul2.people, BubbleSort.SortOnName);
 
-foreach (Person person in people)
-{
-    Console.WriteLine($"{person.Name}, Age: {person.Age}, PhoneNumber {person.Phone}");
-}
+//foreach (Person person in people)
+//{
+//    Console.WriteLine($"{person.Name}, Age: {person.Age}, PhoneNumber {person.Phone}");
+//}
