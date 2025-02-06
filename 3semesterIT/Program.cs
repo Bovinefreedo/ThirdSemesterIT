@@ -8,11 +8,6 @@ using ThirdSemesterIT.B1Leetcode;
 
 //Person[] people = Modul2.youngerThan(Modul2.people, 30);
 
-//string[] badwords = new string[] { "vasketøjet", "regnvejr", "email", "forsinket", "tidligt" };
-//string[] words = new string[] { "Jeg", "vil", "stå", "tidligt", "op", "og", "gøre", "noget", "ved", "vasketøjet", "jeg", "håber", "det", "ikke", "bliver", "regnvejr", "ellers", "sender", "jeg", "en", "email" };
-
-//string[] newWords = Modul2.badWordReplacer(words, badwords);
-
 //Console.Write(string.Join(" ", newWords));
 
 //Person[] people = BubbleSort.Sort(Modul2.people, BubbleSort.SortOnName);
@@ -21,8 +16,8 @@ using ThirdSemesterIT.B1Leetcode;
 //{
 //    Console.WriteLine($"{person.Name}, Age: {person.Age}, PhoneNumber {person.Phone}");
 //}
-for(int i = 1;  i < 25; i++) { 
-    Console.WriteLine($"{i-1} ++ {Q1510StoneIV.WinnerSquareGame(i)}");
+for (int i = 1; i < 25; i++)
+{
+    Console.WriteLine($"{i} ++ {Q1510StoneIV.WinnerSquareGame(i)}");
 }
 
-Console.WriteLine(Q1726TupleProduct.TupleSameProduct(new int[] {1,2,4,8}));

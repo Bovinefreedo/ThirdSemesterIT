@@ -12,18 +12,18 @@ namespace ThirdSemesterIT.B1Leetcode
         {
             bool[] resultArray = new bool[n+1];
 
-            for (int i = 1; i <= n; i++) {
+            for (int i = 0; i < n; i++) {
                 bool canWin = false;
-                for (int j = 1; j <= (int)Math.Sqrt(i); j++) {
-                    if (!resultArray[i - (int)Math.Pow(j, 2)+1]) {
+                for (int j = 1; j <= (int)Math.Sqrt(i+1); j++) {
+                    if (!resultArray[i +1 - (int)Math.Pow(j, 2)]) {
                         canWin = true; 
                         break;
                     }
                 }
-                canWin = (int)Math.Pow(Math.Sqrt(i), 2) - i == 0;
+                canWin = (int)Math.Pow(Math.Sqrt(i+1), 2) == i + 1;
                 resultArray[i] = canWin; 
             }
-            return resultArray[n];
+            return resultArray[n-1];
         }
     }
 }
