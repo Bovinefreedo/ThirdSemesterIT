@@ -10,21 +10,20 @@ namespace ThirdSemesterIT.B1Leetcode
     {
         public static bool WinnerSquareGame(int n)
         {
-            bool[] resultArray = new bool[n];
+            bool[] resultArray = new bool[n+1];
 
             for (int i = 1; i <= n; i++) {
                 bool canWin = false;
                 for (int j = 1; j <= (int)Math.Sqrt(i); j++) {
-                    if (!resultArray[i - (int)Math.Pow(j, 2)]) {
-                        Console.WriteLine($"can win on{i}");
+                    if (!resultArray[i - (int)Math.Pow(j, 2)+1]) {
                         canWin = true; 
                         break;
                     }
                 }
                 canWin = (int)Math.Pow(Math.Sqrt(i), 2) - i == 0;
-                resultArray[i - 1] = canWin; 
+                resultArray[i] = canWin; 
             }
-            return resultArray[n-1];
+            return resultArray[n];
         }
     }
 }
