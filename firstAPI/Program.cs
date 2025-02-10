@@ -3,8 +3,17 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics.Eventing.Reader;
 
 var builder = WebApplication.CreateBuilder(args);
+var AllowSomeStuff = "_AllowSomeStuff";
+builder.Services.AddCors(options =>
+{
+	options.AddPolicy(name: AllowSomeStuff, builder => {
+		builder.AllowAnyOrigin()
+		.AllowAnyHeader()
+		.AllowAnyMethod();
+	});
+});
 var app = builder.Build();
-
+app.UseCors(AllowSomeStuff);
 
 List<string> fruit = new List<string>{"Orange", "PassionFruit", "Strawberry", "Apple", "Banana", "Pineapple"};
 Random rnd = new Random();
