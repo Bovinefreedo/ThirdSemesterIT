@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics.Eventing.Reader;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
@@ -21,7 +22,44 @@ app.MapPost("/api/fruit/add", (Fruit f) => {
     return Results.Ok();
 });
 
+///////////////////////////////////////////////////////////
+
+List<ToDo> toDos = new List<ToDo>();
+
+app.MapGet("/api/tasks", () => Results.Ok(toDos));
+app.MapGet("/api/tasks/{id}", (int id) => {
+   return id < 0 || id >= toDos.Count ? Results.BadRequest("Invalid Id") : Results.Ok(toDos[id]);
+});
+app.MapPost("/api/tasks/addtask", (ToDo todo) =>
+{
+    if (todo != null)
+    {
+        toDos.Add(todo);
+        return Results.Ok();
+    }
+    return Results.BadRequest("null object");
+});
+app.MapPut("/api/tasks/update/{id}", (int id, ToDo todo) => {
+    if (id < 0 || id >= toDos.Count) {
+        return Results.NoContent();
+	}
+    toDos[id] = todo;
+    return Results.Ok();
+});
+app.MapDelete("/api/tasks/delete/{id}", (int id) =>
+{
+    if (id < 0 || id >= toDos.Count)
+    {
+        return Results.NoContent();
+    }
+    toDos.RemoveAt(id);
+    return Results.Ok();
+});
+
+
 app.Run();
+
+public record ToDo(string text, bool done);
 
 public record Fruit {
     public string name { get; set; } = String.Empty;

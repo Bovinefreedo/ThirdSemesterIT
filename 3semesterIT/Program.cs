@@ -16,8 +16,8 @@ using ThirdSemesterIT.B1Leetcode;
 //{
 //    Console.WriteLine($"{person.Name}, Age: {person.Age}, PhoneNumber {person.Phone}");
 //}
-for (int i = 1; i < 25; i++)
+for (int i = 1; i < 100; i++)
 {
-    Console.WriteLine($"{i} ++ {Q1510StoneIV.WinnerSquareGame(i)}");
+	Console.WriteLine($"{i} ++ {Q1510StoneIV.WinnerSquareGame(i)}");
 }
 
