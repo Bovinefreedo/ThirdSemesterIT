@@ -33,13 +33,18 @@ app.MapPost("/api/fruit/add", (Fruit f) => {
 
 ///////////////////////////////////////////////////////////
 
-List<ToDo> toDos = new List<ToDo>();
+List<ToDo> toDos = new List<ToDo>() {
+    new ToDo(0, "Get the tasks working", false),
+	new ToDo(1, "Make it look nice", false),
+	new ToDo(2, "Create a remove button", false),
+    new ToDo(3, "Have a cup of tea", false)
+};
 
 app.MapGet("/api/tasks", () => Results.Ok(toDos));
 app.MapGet("/api/tasks/{id}", (int id) => {
    return id < 0 || id >= toDos.Count ? Results.BadRequest("Invalid Id") : Results.Ok(toDos[id]);
 });
-app.MapPost("/api/tasks/addtask", (ToDo todo) =>
+app.MapPost("/api/tasks/", (ToDo todo) =>
 {
     if (todo != null)
     {
@@ -65,11 +70,20 @@ app.MapDelete("/api/tasks/delete/{id}", (int id) =>
     return Results.Ok();
 });
 
+////////////////////////////////////////////////////////////////////////////////////
+
+List<Question> questions = new List<Question>();
+
+app.MapGet("/api/questions", () => questions);
+app.MapGet("/api/questions/{id}", (int id) => questions.Where(x => x.id == id).FirstOrDefault);
+
 
 app.Run();
 
-public record ToDo(string text, bool done);
+public record ToDo(int id,string text, bool done);
 
 public record Fruit {
     public string name { get; set; } = String.Empty;
 }
+
+public record Question (int id, string question, string answer);
