@@ -21,3 +21,13 @@ for (int i = 1; i < 100; i++)
 	Console.WriteLine($"{i} ++ {Q1510StoneIV.WinnerSquareGame(i)}");
 }
 
+Q2349NumberContainers containers = new Q2349NumberContainers();
+
+Console.WriteLine(containers.Find(10));
+containers.Change(2, 10);
+containers.Change(1, 10);
+containers.Change(3, 10);
+containers.Change(5, 10);
+Console.WriteLine(containers.Find(10));
+containers.Change(1, 20);
+Console.WriteLine(containers.Find(10));
