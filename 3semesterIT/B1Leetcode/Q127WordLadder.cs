@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,8 +11,14 @@ namespace ThirdSemesterIT.B1Leetcode
     {
         public int LadderLength(string beginWord, string endWord, IList<string> wordList)
         {
-            int result = 0;
-            return result;
+            Queue<string> queue = new Queue<string>();
+            List<string> list = new List<string>();
+            while (queue.Count > 0) {
+                for (int i = 0; i < queue.Count; i++) { 
+                
+                }
+            }
+            return 0;
         }
     }
 }
