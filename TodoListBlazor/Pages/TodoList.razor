@@ -17,10 +17,10 @@
 else
 {
     <ol>
-        @foreach (var task in tasks)
+        @for(int i = 0; i<tasks.Length; i++)
         {
             <li>
-                <TodoTask Task=@task></TodoTask>
+                <TodoTask Task=@tasks[i] Id=@i></TodoTask>
             </li>
         }
     </ol>

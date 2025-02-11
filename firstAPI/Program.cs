@@ -53,14 +53,14 @@ app.MapPost("/api/tasks/", (ToDo todo) =>
     }
     return Results.BadRequest("null object");
 });
-app.MapPut("/api/tasks/update/{id}", (int id, ToDo todo) => {
+app.MapPut("/api/tasks/{id}", (int id, ToDo todo) => {
     if (id < 0 || id >= toDos.Count) {
         return Results.NoContent();
 	}
     toDos[id] = todo;
     return Results.Ok();
 });
-app.MapDelete("/api/tasks/delete/{id}", (int id) =>
+app.MapDelete("/api/tasks/{id}", (int id) =>
 {
     if (id < 0 || id >= toDos.Count)
     {

@@ -29,10 +29,10 @@ public class TodoListService
         return await http.GetFromJsonAsync<TaskData[]>(url);
     }
 
-    public async void PutTaskData(TaskData data)
+    public async void PutTaskData(TaskData data, int id)
     {
         TaskDataAPI newData = new TaskDataAPI(data.Text, data.Done);
-        string url = $"{baseAPI}tasks/{data.Id}";
+        string url = $"{baseAPI}tasks/{id}";
         var res = await http.PutAsJsonAsync(url, newData);
         CallRequestRefresh();
     }

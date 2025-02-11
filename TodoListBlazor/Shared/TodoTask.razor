@@ -8,12 +8,15 @@
     [Parameter]
     public TaskData Task { get; set; }
 
+    [Parameter]
+    public int id { get; set; }
+
     private void HandleDone(ChangeEventArgs e)
     {
         if (e.Value != null && e.Value is bool) {
             bool newValue = (bool) e.Value;
             Task.Done = newValue;
-            todoService.PutTaskData(Task);
+            todoService.PutTaskData(Task, id);
         }
     }
 }
