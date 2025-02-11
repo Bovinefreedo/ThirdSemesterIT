@@ -74,8 +74,31 @@ app.MapDelete("/api/tasks/delete/{id}", (int id) =>
 
 List<Question> questions = new List<Question>();
 
-app.MapGet("/api/questions", () => questions);
-app.MapGet("/api/questions/{id}", (int id) => questions.Where(x => x.id == id).FirstOrDefault);
+app.MapGet("/api/questions", () => {
+    List<qOnly> onlyQuestion = new();
+    foreach (var q in questions) {
+        onlyQuestion.Add(new qOnly(q.id, q.question));
+    }
+});
+app.MapGet("/api/questions/{id}", (int id) => {
+    Question? request = questions.Where(x => x.id == id).FirstOrDefault();
+    if (request == null) {
+        return Results.NoContent();
+    }
+    return Results.Ok(new qOnly(request.id, request.question));
+});
+
+app.MapGet("/api/questions/{id}/validate/{answer}", (int id, string answer) =>
+{
+    Question? request = questions.Where(x => x.id == id).FirstOrDefault();
+    if (request == null)
+    {
+        return Results.BadRequest("The id had no question attached");
+    }
+    return Results.Ok(answer.ToLower() == request.answer.ToLower());
+});
+
+app.MapPost("/api/questions/addquestion", (Question question) => questions.Add(question));
 
 
 app.Run();
@@ -87,3 +110,4 @@ public record Fruit {
 }
 
 public record Question (int id, string question, string answer);
+public record qOnly (int id, string question);
