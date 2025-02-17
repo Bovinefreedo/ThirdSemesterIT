@@ -8,7 +8,7 @@ namespace Core.Models
 {
     public record QOnly
     {
-        public int id { get; set; }
-        public int question { get; set; }
+        public int id { get; set; } = -1;   
+        public string question { get; set; } = string.Empty;
     }
 }
