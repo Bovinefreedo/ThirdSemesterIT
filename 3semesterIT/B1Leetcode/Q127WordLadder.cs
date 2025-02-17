@@ -9,16 +9,29 @@ namespace ThirdSemesterIT.B1Leetcode
 {
     public class Q127WordLadder
     {
-        public int LadderLength(string beginWord, string endWord, IList<string> wordList)
+        public static int LadderLength(string beginWord, string endWord, IList<string> wordList)
         {
-            Queue<string> queue = new Queue<string>();
-            List<string> list = new List<string>();
+            Queue<Node> queue = new Queue<Node>();
+            queue.Enqueue(new Node(beginWord, 1));
             while (queue.Count > 0) {
-                for (int i = 0; i < queue.Count; i++) { 
-                
+                Node node = queue.Dequeue();
+                if (endWord == node.word)
+                    return node.distance;
+                for (int i = 0; i < wordList.Count; i++) {
+                    int differences = 0;
+                    for (int j = 0; j < endWord.Length; j++){
+                        if (node.word[j] != wordList[i][j])
+                            differences++;
+                    }
+                    if (differences == 1) { 
+                        queue.Enqueue(new Node(wordList[i], node.distance+1));
+                        wordList.RemoveAt(i);
+                        i--;
+                    }
                 }
             }
             return 0;
         }
     }
+    public record Node(string word, int distance);
 }

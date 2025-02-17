@@ -16,18 +16,24 @@ using ThirdSemesterIT.B1Leetcode;
 //{
 //    Console.WriteLine($"{person.Name}, Age: {person.Age}, PhoneNumber {person.Phone}");
 //}
-for (int i = 1; i < 100; i++)
+
+var result = Q126WordLadderII.FindLadders ("hit","cog", new List<string>() { "hot", "dot", "dog", "lot", "log", "cog" });
+
+foreach (var item in result)
 {
-	Console.WriteLine($"{i} ++ {Q1510StoneIV.WinnerSquareGame(i)}");
+    Console.WriteLine("");
+    foreach (var word in item) { 
+        Console.Write($"{word}, ");
+    }
 }
 
-Q2349NumberContainers containers = new Q2349NumberContainers();
+result = Q126WordLadderII.FindLadders("red", "tax", new List<string>() { "ted", "tex", "red", "tax", "tad", "den", "rex", "pee" });
 
-Console.WriteLine(containers.Find(10));
-containers.Change(2, 10);
-containers.Change(1, 10);
-containers.Change(3, 10);
-containers.Change(5, 10);
-Console.WriteLine(containers.Find(10));
-containers.Change(1, 20);
-Console.WriteLine(containers.Find(10));
+foreach (var item in result)
+{
+    Console.WriteLine("");
+    foreach (var word in item)
+    {
+        Console.Write($"{word}, ");
+    }
+}
