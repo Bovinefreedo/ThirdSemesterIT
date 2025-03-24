@@ -5,7 +5,7 @@ using ThirdSemesterIT.B1Leetcode;
 namespace ThirdSemesterIT.A11UserLinkedList
 {
 
-    class UserLinkedList
+    public class UserLinkedList
     {
         private ListNode first = null!;
 
