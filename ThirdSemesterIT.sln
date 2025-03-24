@@ -7,11 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThirdSemesterIT", "3semeste
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "firstAPI", "firstAPI\firstAPI.csproj", "{D294BC5E-2F6D-4DB8-BAB1-AC1665DD5056}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{0506661E-BE2B-40F7-B27C-02E028FA8591}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{0506661E-BE2B-40F7-B27C-02E028FA8591}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoListBlazor", "TodoListBlazor\TodoListBlazor.csproj", "{5C776B54-65F4-4F15-B43C-140D1CFEBE5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{6582F5D5-E27E-47AB-9E22-F23A1C8135E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{6582F5D5-E27E-47AB-9E22-F23A1C8135E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsForConsoleApp", "TestsForConsoleApp\TestsForConsoleApp.csproj", "{5CBEF319-D760-4977-B9BF-00A3757051CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{6582F5D5-E27E-47AB-9E22-F23A1C8135E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6582F5D5-E27E-47AB-9E22-F23A1C8135E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6582F5D5-E27E-47AB-9E22-F23A1C8135E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CBEF319-D760-4977-B9BF-00A3757051CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CBEF319-D760-4977-B9BF-00A3757051CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CBEF319-D760-4977-B9BF-00A3757051CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CBEF319-D760-4977-B9BF-00A3757051CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
