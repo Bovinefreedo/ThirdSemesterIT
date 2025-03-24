@@ -17,8 +17,9 @@ namespace ThirdSemesterIT.A11UserLinkedList
 
         public User RemoveFirst()
         {
-            first = first.Next!;
-            return first != null ? first.Data : null!;
+            User removedUser = first.Data;
+            first = first.Next;
+            return removedUser;
         }
 
         public void RemoveUser(User user)

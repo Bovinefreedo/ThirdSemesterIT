@@ -9,8 +9,8 @@ namespace ThirdSemesterIT.A11LinkedList
 {
     public class DoublyLinkedList
     {
-        DoubleLinkedNode first = null!;
-        DoubleLinkedNode last = null!;
+        public DoubleLinkedNode first { get; set; } = null!;
+        public DoubleLinkedNode last { get; set; } = null!;
 
         public void addFirst(User user) {
             DoubleLinkedNode newNode = new DoubleLinkedNode(null!, first, user);

@@ -9,8 +9,8 @@ namespace ThirdSemesterIT.A11LinkedList
 {
     public class DoubleLinkedNode
     {
-        public DoubleLinkedNode previous { get; set; }
-        public DoubleLinkedNode next { get; set; }
+        public DoubleLinkedNode previous { get; set; } = null!;
+        public DoubleLinkedNode next { get; set; } = null!;
         public User data { get; set; }
 
         public DoubleLinkedNode(DoubleLinkedNode previous, DoubleLinkedNode next, User data)
