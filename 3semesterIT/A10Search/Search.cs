@@ -81,7 +81,7 @@ namespace ThirdSemesterIT.A10Search
                 {
                     break;
                 }
-                if (hold < sortedArray[i])
+                if (hold < sortedArray[i] || hold ==-1)
                 {
                     int keep = sortedArray[i];
                     sortedArray[i] = hold;
@@ -95,6 +95,15 @@ namespace ThirdSemesterIT.A10Search
                 i++;
             }
             return sortedArray;
+        }
+
+        public void printArray(int[] array) { 
+            string result = "[";
+            foreach (int item in array) { 
+                result += $"{item}, ";
+            }
+            result += "]";
+            Console.WriteLine(result);
 
         }
     }

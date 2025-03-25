@@ -54,6 +54,7 @@ namespace TestsForConsoleApp
                 new int[] { 2, 4, 8, 10, 15, 17, -1, -1, -1, -1 },
                 6
             );
+            Console
 
             int[] newArray = Search.InsertSorted(11);
             CollectionAssert.AreEqual(
