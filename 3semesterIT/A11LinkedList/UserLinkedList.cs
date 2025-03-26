@@ -120,20 +120,25 @@ namespace ThirdSemesterIT.A11UserLinkedList
             ListNode currentNode = first;
             ListNode? previousNode = null!;
             do {
-                if(user.Name.CompareTo(currentNode.Data.Name) <= 0)
+                if (currentNode == null) { 
+                    previousNode.Next = new ListNode(user, null!);
+                    return;
+                }
+                else if (user.Name.CompareTo(currentNode.Data.Name) <= 0)
                 {
                     ListNode newNode = new ListNode(user, currentNode);
                     if (previousNode != null)
                     {
                         previousNode.Next = newNode;
                     }
-                    else {
+                    else
+                    {
                         first = newNode;
                     }
                     return;
                 }
             }
-            while(currentNode!= null);
+            while(true);
         }
     }
 }
