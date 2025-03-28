@@ -9,31 +9,27 @@ namespace ThirdSemesterIT.A11LinkedList
 {
     public class LinkedMazeList
     {
-        private CoordinateNode head = null!;
+        public CoordinateNode first = null!;
 
-        public void push(CoordinateNode node)
+        public void insertFirst(Coordinate coordinate)
         {
-            if (head != null)
-            {
-                node.next = head;
-            }
-            head = node;
+                first = new CoordinateNode(coordinate, first);
         }
 
-        public Coordinate pop()
+        public Coordinate removeFirst()
         {
-            Coordinate coordinate = head.coordinate;
-            head = head.next;
+            Coordinate coordinate = first.coordinate;
+            first = first.next;
             return coordinate;
         }
 
         public void insertSorted(Coordinate coordinate)
         {
-            if (head == null)
+            if (first == null)
             {
-                head = new CoordinateNode(coordinate, null!);
+                first = new CoordinateNode(coordinate, null!);
             }
-            CoordinateNode currentNode = head;
+            CoordinateNode currentNode = first;
             CoordinateNode? previousNode = null!;
             while(true)
             {
@@ -51,7 +47,7 @@ namespace ThirdSemesterIT.A11LinkedList
                     }
                     else
                     {
-                        head = newNode;
+                        first = newNode;
                     }
                     return;
                 }

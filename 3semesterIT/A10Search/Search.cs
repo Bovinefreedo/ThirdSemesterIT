@@ -119,6 +119,7 @@ namespace ThirdSemesterIT.A10Search
             result += "]";
             Console.WriteLine(result);
 
+
         }
     }
 }

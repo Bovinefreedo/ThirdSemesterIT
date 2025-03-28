@@ -13,7 +13,7 @@ namespace ThirdSemesterIT.A11LinkedList
         public CoordinateNode first { get; set; } = null!;
         public CoordinateNode last { get; set; } = null!;
 
-        public void addFirst(Coordinate coordinate)
+        public void insertFirst(Coordinate coordinate)
         {
             CoordinateNode newNode = new CoordinateNode(coordinate, first, null!);
             if (first != null)
@@ -27,7 +27,7 @@ namespace ThirdSemesterIT.A11LinkedList
             first = newNode;
         }
 
-        public void addLast(Coordinate coordinate)
+        public void insertLast(Coordinate coordinate)
         {
             CoordinateNode newNode = new CoordinateNode(coordinate, null!, last);
             if (last != null)
