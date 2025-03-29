@@ -31,12 +31,35 @@ namespace ThirdSemesterIT.B2FunWithLinkedLists
 
             while (que.first != null) { 
                 maze[que.first.coordinate.x, que.first.coordinate.y] = "c";
+                for (int i = -1; i < 2; i += 2)
+                {
+                    Coordinate c1 = new Coordinate(que.first.coordinate.x + i, que.first.coordinate.y);
+                    Coordinate c2 = new Coordinate(que.first.coordinate.x, que.first.coordinate.y + i);
 
-                
-                
-
+                    if (legalMove(c1))
+                    {
+                        if (maze[c1.x, c1.y] == "e")
+                        {
+                            return que.first.path.Length;
+                        }
+                        maze[c1.x, c1.y] = "s";
+                        que.addLast(c1);
+                        que.last.path = que.first.path.Concat(new Coordinate[] { c1 }).ToArray();
+                    }
+                    if (legalMove(c2))
+                    {
+                        if (maze[c2.x, c2.y] == "e")
+                        {
+                            return que.first.path.Length;
+                        }
+                        maze[c2.x, c2.y] = "s";
+                        que.addLast(c2);
+                        que.last.path = que.first.path.Concat(new Coordinate[] { c2 }).ToArray();
+                    }
+                }
+                maze[que.first.coordinate.x, que.first.coordinate.y] = "S";
+                que.removeFirst();
             }
-
             return -1;
         }
 
@@ -49,16 +72,7 @@ namespace ThirdSemesterIT.B2FunWithLinkedLists
             {
                 return false;
             }
-
-            if (maze[coordinate.x, coordinate.y] == ",")
-            {
-                return true;
-            }
-            else if (maze[coordinate.x, coordinate.y] == "e")
-            {
-                return true;
-            }
-            return false;
+            return true;
         }
     }
 }
