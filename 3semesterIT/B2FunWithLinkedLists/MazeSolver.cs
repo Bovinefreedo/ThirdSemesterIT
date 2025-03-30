@@ -25,6 +25,11 @@ namespace ThirdSemesterIT.B2FunWithLinkedLists
             this.maze = maze;
         }
 
+        public bool solveMazeDFS(Coordinate start) {
+
+            return false;
+        }
+
         public int solveMazeBFS(Coordinate start) {
             DoubleLinkedMazeList que = new DoubleLinkedMazeList();
             que.addLast(start);
