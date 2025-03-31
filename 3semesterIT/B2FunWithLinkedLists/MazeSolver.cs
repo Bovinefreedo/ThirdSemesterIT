@@ -27,12 +27,47 @@ namespace ThirdSemesterIT.B2FunWithLinkedLists
 
         public bool solveMazeDFS(Coordinate start) {
 
+            LinkedMazeList stack = new LinkedMazeList();
+            stack.insertFirst(start);
+
+            while (stack.first != null)
+            {
+                maze[stack.first.coordinate.x, stack.first.coordinate.y] = "c";
+                for (int i = -1; i < 2; i += 2)
+                {
+                    Coordinate c1 = new Coordinate(stack.first.coordinate.x + i, stack.first.coordinate.y);
+                    Coordinate c2 = new Coordinate(stack.first.coordinate.x, stack.first.coordinate.y + i);
+
+                    if (legalMove(c1))
+                    {
+                        if (maze[c1.x, c1.y] == "e")
+                        {
+                            return true;
+                        }
+                        maze[c1.x, c1.y] = "s";
+                        stack.insertFirst(c1);
+                        stack.first.path = stack.first.path.Concat(new Coordinate[] { c1 }).ToArray();
+                    }
+                    if (legalMove(c2))
+                    {
+                        if (maze[c2.x, c2.y] == "e")
+                        {
+                            return true;
+                        }
+                        maze[c2.x, c2.y] = "s";
+                        stack.insertFirst(c2);
+                        stack.first.path = stack.first.path.Concat(new Coordinate[] { c2 }).ToArray();
+                    }
+                }
+                maze[stack.first.coordinate.x, stack.first.coordinate.y] = "S";
+                stack.removeFirst();
+            }
             return false;
         }
 
         public int solveMazeBFS(Coordinate start) {
             DoubleLinkedMazeList que = new DoubleLinkedMazeList();
-            que.addLast(start);
+            que.insertLast(start);
 
             while (que.first != null) { 
                 maze[que.first.coordinate.x, que.first.coordinate.y] = "c";
@@ -48,7 +83,7 @@ namespace ThirdSemesterIT.B2FunWithLinkedLists
                             return que.first.path.Length;
                         }
                         maze[c1.x, c1.y] = "s";
-                        que.addLast(c1);
+                        que.insertLast(c1);
                         que.last.path = que.first.path.Concat(new Coordinate[] { c1 }).ToArray();
                     }
                     if (legalMove(c2))
@@ -58,7 +93,7 @@ namespace ThirdSemesterIT.B2FunWithLinkedLists
                             return que.first.path.Length;
                         }
                         maze[c2.x, c2.y] = "s";
-                        que.addLast(c2);
+                        que.insertLast(c2);
                         que.last.path = que.first.path.Concat(new Coordinate[] { c2 }).ToArray();
                     }
                 }
