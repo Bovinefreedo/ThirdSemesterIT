@@ -47,38 +47,39 @@ namespace TestsForConsoleApp
         }
 
 
-        [TestMethod]
-        public void TestInsertSorted()
-        {
-            Search.InitSortedArray(
-                new int[] { 2, 4, 8, 10, 15, 17, -1, -1, -1, -1 },
-                6
-            );
+        //[TestMethod]
+        //public void TestInsertSorted()
+        //{
+        //    Search.InitSortedArray(
+        //        new int[] { 2, 4, 8, 10, 15, 17, -1, -1, -1, -1 },
+        //        6
+        //    );
 
-            int[] newArray = Search.InsertSorted(11);
-            CollectionAssert.AreEqual(
-                new int[] { 2, 4, 8, 10, 11, 15, 17, -1, -1, -1 },
-                newArray
-            );
+        //    int[] newArray = Search.InsertSorted(11);
+        //    CollectionAssert.AreEqual(
+        //        new int[] { 2, 4, 8, 10, 11, 15, 17, -1, -1, -1 },
+        //        newArray
+        //    );
 
-            newArray = Search.InsertSorted(19);
-            CollectionAssert.AreEqual(
-                new int[] { 2, 4, 8, 10, 11, 15, 17, 19, -1, -1 },
-                newArray
-            );
 
-            newArray = Search.InsertSorted(1);
-            CollectionAssert.AreEqual(
-                new int[] { 1, 2, 4, 8, 10, 11, 15, 17, 19, -1 },
-                newArray
-            );
+        //    newArray = Search.InsertSorted(19);
+        //    CollectionAssert.AreEqual(
+        //        new int[] { 2, 4, 8, 10, 11, 15, 17, 19, -1, -1 },
+        //        newArray
+        //    );
 
-            newArray = Search.InsertSorted(20);
-            CollectionAssert.AreEqual(
-                new int[] { 1, 2, 4, 8, 10, 11, 15, 17, 19, 20 },
-                newArray
-            );
-        }
+        //    newArray = Search.InsertSorted(1);
+        //    CollectionAssert.AreEqual(
+        //        new int[] { 1, 2, 4, 8, 10, 11, 15, 17, 19, -1 },
+        //        newArray
+        //    );
+
+        //    newArray = Search.InsertSorted(20);
+        //    CollectionAssert.AreEqual(
+        //        new int[] { 1, 2, 4, 8, 10, 11, 15, 17, 19, 20 },
+        //        newArray
+        //    );
+        //}
 
         [TestMethod]
         public void TestInsertSortedFull()

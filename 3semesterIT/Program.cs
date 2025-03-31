@@ -1,14 +1,12 @@
 ﻿using System.Globalization;
-using ThirdSemesterIT.A10Search;
-using ThirdSemesterIT.A1Recurssion;
-using ThirdSemesterIT.A2FunctionalProgramming;
-using ThirdSemesterIT.B1Leetcode;
+using ThirdSemesterIT.A12Sorting;
 
-Search.InitSortedArray(
-                new int[] { 2, 4, 8, 10, 15, 17, -1, -1, -1, -1 },
-                6
-            );
-Search.InsertSorted(11);
+int[] array = new int[] { 34, 18, 15, 45, 67, 11 };
+
+QuickSort.Sort(array);
+
+Console.WriteLine(string.Join(", ", array));
 
 
-Console.WriteLine(string.Join(", ", Search.sortedArray));
+
+

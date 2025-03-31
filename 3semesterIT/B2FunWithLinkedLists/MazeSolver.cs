@@ -25,7 +25,8 @@ namespace ThirdSemesterIT.B2FunWithLinkedLists
             this.maze = maze;
         }
 
-        public bool solveMazeDFS(Coordinate start) {
+        public bool solveMazeDFS(Coordinate start)
+        {
 
             LinkedMazeList stack = new LinkedMazeList();
             stack.insertFirst(start);
@@ -65,11 +66,13 @@ namespace ThirdSemesterIT.B2FunWithLinkedLists
             return false;
         }
 
-        public int solveMazeBFS(Coordinate start) {
+        public int solveMazeBFS(Coordinate start)
+        {
             DoubleLinkedMazeList que = new DoubleLinkedMazeList();
             que.insertLast(start);
 
-            while (que.first != null) { 
+            while (que.first != null)
+            {
                 maze[que.first.coordinate.x, que.first.coordinate.y] = "c";
                 for (int i = -1; i < 2; i += 2)
                 {
@@ -103,9 +106,41 @@ namespace ThirdSemesterIT.B2FunWithLinkedLists
             return -1;
         }
 
+        public void SolveMazeEulers(Coordinate start, Coordinate finish)
+        {
+            LinkedMazeList stack = new LinkedMazeList();
+            start.distance = Math.Abs(start.x - finish.x) + Math.Abs(start.y - finish.y);
+            stack.insertSorted(start);
+
+            while (stack.first != null)
+            {
+                for (int i = -1; i < 2; i += 2)
+                {
+                    Coordinate c1 = new Coordinate(stack.first.coordinate.x + i, stack.first.coordinate.y);
+                    Coordinate c2 = new Coordinate(stack.first.coordinate.x, stack.first.coordinate.y + i);
+
+                    if (legalMove(c1))
+                    {
+                        if (legalMove(c1))
+                        {
+                            if (maze[c1.x, c1.y] == "e")
+                            {
+                                return;
+                            }
+                            c1.distance = Math.Abs(c1.x - finish.x) + Math.Abs(c1.y - finish.y);
+                            maze[c1.x, c1.y] = "s";
+                            CoordinateNode newNode = new CoordinateNode(c1, null!);
+                            stack.insertSorted(c1);                        }
+
+                    }
+                }
+            }
+        }
+
         public bool legalMove(Coordinate coordinate)
         {
-            if (coordinate.x < 0 || coordinate.x >= maze.GetLength(0)) {
+            if (coordinate.x < 0 || coordinate.x >= maze.GetLength(0))
+            {
                 return false;
             }
             if (coordinate.y < 0 || coordinate.y >= maze.GetLength(1))

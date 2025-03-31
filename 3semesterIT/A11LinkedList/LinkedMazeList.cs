@@ -53,5 +53,33 @@ namespace ThirdSemesterIT.A11LinkedList
                 }
             }
         }
+
+        public void insertSorted(CoordinateNode coordinate) {
+            if (first == null)
+            {
+                first = coordinate;
+            }
+            CoordinateNode currentNode = first;
+            CoordinateNode? previousNode = null!;
+
+            if (currentNode == null)
+            {
+                previousNode.next = coordinate;
+                return;
+            }
+            else if (coordinate.coordinate.distance < currentNode.coordinate.distance)
+            {
+                CoordinateNode newNode = coordinate;
+                if (previousNode != null)
+                {
+                    previousNode.next = newNode;
+                }
+                else
+                {
+                    first = newNode;
+                }
+                return;
+            }
+        }
     }
 }
