@@ -11,42 +11,31 @@ namespace ThirdSemesterIT.A12Sorting
     {
         public static void Sort(int[] array)
         {
-            quickSort(array, 0, array.Length - 1);
+            quickSort(array, 0, array.Length-1);
         }
 
         public static void quickSort(int[] array, int low, int high)
         {
-            int i = low + 1;
-            int j = high;
-            if (i > j) { return; }
+            if (low < high) { 
+                int pivot = Partition(array, low, high);
+                quickSort(array, low, pivot - 1);
+                quickSort(array, pivot + 1, high);
+            }
+        }
+
+        public static int Partition(int[] array, int low, int high) {
             int pivot = array[low];
-            while (i < j)
-            {
-                if (array[i] <= pivot)
-                {
+            int i = low + 1;
+            for (int j = high; j > i; j--) {
+                if (array[j] < pivot) { 
+                    ArraySwap(array, j, i);
                     i++;
                 }
-                else
-                {
-                    while (i < j)
-                    {
-                        if (array[j] > pivot)
-                        {
-                            j--;
-                        }
-                        else
-                        {
-                            ArraySwap(array, i, j);
-                            i++;
-                            j--;
-                            break;
-                        }
-                    }
-                }
             }
-            ArraySwap(array, low, j);
-            quickSort(array, low, j - 1);
-            quickSort(array, j + 1, high);
+            if (array[i]!= pivot)
+                ArraySwap(array, low, i);
+
+            return i;
         }
 
         public static void ArraySwap(int[] array, int indexA, int indexB)

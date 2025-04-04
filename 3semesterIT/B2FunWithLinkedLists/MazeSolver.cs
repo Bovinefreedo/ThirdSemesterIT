@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
 using ThirdSemesterIT.A11LinkedList;
@@ -121,18 +122,30 @@ namespace ThirdSemesterIT.B2FunWithLinkedLists
 
                     if (legalMove(c1))
                     {
-                        if (legalMove(c1))
+                        if (maze[c1.x, c1.y] == "e")
                         {
-                            if (maze[c1.x, c1.y] == "e")
-                            {
-                                return;
-                            }
-                            c1.distance = Math.Abs(c1.x - finish.x) + Math.Abs(c1.y - finish.y);
-                            maze[c1.x, c1.y] = "s";
-                            CoordinateNode newNode = new CoordinateNode(c1, null!);
-                            stack.insertSorted(c1);                        }
-
+                            return;
+                        }
+                        c1.distance = Math.Abs(c1.x - finish.x) + Math.Abs(c1.y - finish.y);
+                        maze[c1.x, c1.y] = "s";
+                        CoordinateNode newNode = new CoordinateNode(c1, null!);
+                        newNode.path = stack.first.path.Concat(new Coordinate[] { c1 }).ToArray();
+                        stack.insertSorted(newNode);
                     }
+                    if (legalMove(c2))
+                    {
+                        if (maze[c2.x, c2.y] == "e")
+                        {
+                            return;
+                        }
+                        c1.distance = Math.Abs(c2.x - finish.x) + Math.Abs(c2.y - finish.y);
+                        maze[c2.x, c2.y] = "s";
+                        CoordinateNode newNode = new CoordinateNode(c2, null!);
+                        newNode.path = stack.first.path.Concat(new Coordinate[] { c2 }).ToArray();
+                        stack.insertSorted(newNode);
+                    }
+                    maze[stack.first.coordinate.x, stack.first.coordinate.y] = "S";
+                    stack.removeFirst();
                 }
             }
         }
