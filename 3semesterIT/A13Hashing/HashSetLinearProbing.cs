@@ -29,7 +29,7 @@ namespace ThirdSemesterIT.A13Hashing
                 }
                 if (buckets[index] == null)
                 {
-                    return false; // Not found
+                    return false;
                 }
                 
             }
@@ -40,7 +40,11 @@ namespace ThirdSemesterIT.A13Hashing
         {
             if (currentSize >= buckets.Length)
             {
-                return false; // HashSet is full
+                return false;
+            }
+            if (Contains(x))
+            {
+                return false;
             }
             int h = HashValue(x);
             while (true)

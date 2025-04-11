@@ -78,25 +78,25 @@ namespace ThirdSemesterIT.A13Hashing
         public bool Remove(Object x)
         {
             int h = HashValue(x);
-            Node previousBucket = null;
-            Node currentBucket = buckets[h];
-            if (currentBucket != null) 
+            Node previousNode = null;
+            Node currentNode = buckets[h];
+            while (currentNode != null) 
             {                 {
-                    if (currentBucket.Data.Equals(x))
+                    if (currentNode.Data.Equals(x))
                     {
-                        if (previousBucket != null)
+                        if (previousNode != null)
                         {
-                            previousBucket.Next = currentBucket.Next;
+                            previousNode.Next = currentNode.Next;
                         }
                         else
                         {
-                            buckets[h] = currentBucket.Next;
+                            buckets[h] = currentNode.Next;
                         }
                         currentSize--;
                         return true;
                     }
-                    previousBucket = currentBucket;
-                    currentBucket = currentBucket.Next;
+                    previousNode = currentNode;
+                    currentNode = currentNode.Next;
                 }
             }
             return false;
