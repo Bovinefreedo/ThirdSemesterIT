@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\3semesterIT\ThirdSemesterIT.csproj" />
+    <ProjectReference Include="..\SoftwareUdvikling\SoftwareUdvikling.csproj" />
   </ItemGroup>
 
   <ItemGroup>
